@@ -1,3 +1,5 @@
-def call(String name = 'world') {
-    echo "Hello, ${name} from shared library!"
-}
+#!/usr/bin/env groovy
+import groovy.json.*
+    def call(body) {
+        println("Hellow World !!!")
+    }
