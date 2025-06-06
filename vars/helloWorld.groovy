@@ -1,3 +1,16 @@
-def call(String name = 'world') {
- echo "Hello, ${name} from shared library!"
-}
+//def call(String name = 'world') {
+// echo "Hello, ${name} from shared library!"
+//}
+#/usr/bin/env groovy
+
+import groovy.json.*
+ def call(body) {
+  def mapVars = [:]
+  body.resolveStrategy = Closure.DELEGATE_FIRST
+  body.delegate = mapVars
+  body ()
+
+  def name = mapVars.name
+  def action = maVars.action
+
+  println( action + " " + name + "!!")
